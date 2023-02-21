@@ -4,5 +4,14 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui"),
+    require("tailwind-scrollbar")({ nocompatible: true }),
+  ],
+  daisyui: {
+    styled: true,
+    themes: [
+      "winter", // first one will be the default theme
+    ],
+  },
 };

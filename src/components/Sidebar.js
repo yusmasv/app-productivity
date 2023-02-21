@@ -1,32 +1,67 @@
-import { FaHippo } from "react-icons/fa";
-import { TbNotes } from "react-icons/tb";
+import { SlNotebook } from "react-icons/sl";
 import { NavLink } from "react-router-dom";
-import { FaPencilRuler } from "react-icons/fa";
-import { BsCloudFill } from "react-icons/bs";
+import { SlPuzzle } from "react-icons/sl";
+import { AiOutlineCloud } from "react-icons/ai";
+import { HiOutlineInboxStack } from "react-icons/hi2";
+import { BsQuestionCircle } from "react-icons/bs";
 
 function Sidebar() {
   return (
-    <aside className="w-72 relative h-screen top-0" aria-label="Sidebar">
-      <div className="bg-slate-50 overflow-y-auto py-12 px-8 bg-white h-screen">
-        <ul className="space-y-4">
+    <aside className="w-60 relative h-screen top-0" aria-label="Sidebar">
+      <div className="bg-white overflow-y-auto bg-white h-screen py-4 pl-2">
+        <ul className="">
           <li>
-            <p className="text-gray-500 text-lg font-bold bg-white rounded-2xl flex items-center pl-3 py-3 ">
-              <span className="text-2xl p-3 text-gray rounded-xl mr-4">
-                <FaHippo />
-              </span>
-              Hippomemo
+            <p className="text-gray-700 text-xs font-bold bg-white rounded-2xl flex items-center pl-3 py-10">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/8804/8804795.png"
+                alt="hippo-logo"
+                className="w-10 h-10 mr-4 ml-3"
+              />
+              Memomo
             </p>
+          </li>
+
+          <li>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-gray-800 py-3 px-3 pl-8 border-r-4 border-solid border-white border-r-gray-500 text-xs bg-white hover:bg-gray-100 flex items-center"
+                  : "text-gray-400 py-3 px-3 pl-8 text-xs bg-white hover:bg-gray-100 flex items-center"
+              }>
+              <span className="text-gray-700 mr-4 text-lg">
+                <HiOutlineInboxStack />
+              </span>
+              Dashboard
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-gray-800 py-3 px-3 pl-8  border-r-4 border-solid border-white border-r-gray-500 text-xs bg-white hover:bg-gray-100 flex items-center"
+                  : "text-gray-400 py-3 px-3 pl-8 text-xs bg-white hover:bg-gray-100 flex items-center"
+              }>
+              <span className="text-gray-700 mr-4 text-lg">
+                <BsQuestionCircle />
+              </span>
+              Question
+            </NavLink>
+          </li>
+          <li>
+            <p className="px-4 py-6 ml-4 text-xs">WORKSCPACE</p>
           </li>
           <li>
             <NavLink
               to="/notes"
               className={({ isActive }) =>
                 isActive
-                  ? "text-gray-500 bg-white drop-shadow-xl hover:bg-gray-200 rounded-2xl flex items-center pl-3 py-3 "
-                  : "rounded-2xl text-gray-500 hover:bg-gray-200  flex items-center p-3 text-base font-normal"
+                  ? "text-gray-800 py-3 px-3 pl-8 border-r-4 border-solid border-white border-r-gray-500 text-xs bg-white hover:bg-gray-100 flex items-center"
+                  : "text-gray-400 py-3 px-3 pl-8 text-xs bg-white hover:bg-gray-100 flex items-center"
               }>
-              <span className="bg-gradient-to-r from-rose-500 to-purple-500 p-3 text-white rounded-xl mr-4">
-                <TbNotes />
+              <span className="text-gray-700 mr-4 text-lg">
+                <SlNotebook />
               </span>
               Notes
             </NavLink>
@@ -36,13 +71,13 @@ function Sidebar() {
               to="/todo"
               className={({ isActive }) =>
                 isActive
-                  ? "text-gray-500 bg-white drop-shadow-xl hover:bg-gray-200 rounded-2xl flex items-center pl-3 py-3 "
-                  : "rounded-2xl text-gray-500 hover:bg-gray-200  flex items-center p-3 text-base font-normal"
+                  ? "text-gray-800 py-3 px-3 pl-8 border-r-4 border-solid border-white border-r-gray-500 text-xs bg-white hover:bg-gray-100 flex items-center"
+                  : "text-gray-400 py-3 px-3 pl-8 text-xs bg-white hover:bg-gray-100 flex items-center"
               }>
-              <span className="bg-gradient-to-r from-rose-500 to-purple-500 p-3 text-white rounded-xl mr-4">
-                <FaPencilRuler />
+              <span className="text-gray-700 mr-4 text-lg">
+                <SlPuzzle />
               </span>
-              To Do List
+              Your to-do
             </NavLink>
           </li>
           <li>
@@ -50,11 +85,11 @@ function Sidebar() {
               to="/weather"
               className={({ isActive }) =>
                 isActive
-                  ? "text-gray-500 bg-white drop-shadow-xl hover:bg-gray-200 rounded-2xl flex items-center pl-3 py-3 "
-                  : "rounded-2xl text-gray-500 hover:bg-gray-200  flex items-center p-3 text-base font-normal"
+                  ? "text-gray-800 py-3 px-3 pl-8 border-r-4 border-solid border-white border-r-gray-500 text-xs bg-white hover:bg-gray-100 flex items-center"
+                  : "text-gray-400 py-3 px-3 pl-8 text-xs bg-white hover:bg-gray-100 flex items-center"
               }>
-              <span className="bg-gradient-to-r from-rose-500 to-purple-500 p-3 text-white rounded-xl mr-4">
-                <BsCloudFill />
+              <span className="text-gray-700 mr-4 text-lg">
+                <AiOutlineCloud />
               </span>
               Weather
             </NavLink>
